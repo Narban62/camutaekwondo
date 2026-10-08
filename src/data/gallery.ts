@@ -1,1 +1,32 @@
-export const gallery = [{ title: 'Enfoque', category: 'ENTRENAMIENTO', image: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1200&q=85', alt: 'Práctica de artes marciales en el dojang' }, { title: 'Precisión', category: 'TÉCNICA', image: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1200&q=85', alt: 'Atleta entrenando una técnica' }, { title: 'Determinación', category: 'PREPARACIÓN', image: 'https://images.unsplash.com/photo-1517838277536-f6cf9b9b3b4e?auto=format&fit=crop&w=1200&q=85', alt: 'Preparación física de un atleta' }, { title: 'Movimiento', category: 'COMBATE', image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1200&q=85', alt: 'Entrenamiento de combate' }]
+const galleryPhotos = [
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.18 PM.jpeg', alt: 'Practicantes reunidos con sus doboks en un tatami.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.20 PM (2).jpeg', alt: 'Grupo de CAMU reunido al aire libre.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.20 PM.jpeg', alt: 'Practicantes posan juntos en una sala deportiva.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.22 PM (1).jpeg', alt: 'Grupo de taekwondistas reunido en el dojang.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.22 PM (2).jpeg', alt: 'Dos deportistas practican combate sobre el tatami.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.22 PM (6).jpeg', alt: 'Deportistas posan junto a una premiación.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.22 PM (8).jpeg', alt: 'Grupo amplio reunido en un espacio deportivo.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.22 PM.jpeg', alt: 'Equipo reunido en un recinto deportivo.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (1).jpeg', alt: 'Practicantes posan juntos después de entrenar.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (11).jpeg', alt: 'Grupo de taekwondistas en una práctica colectiva.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (12).jpeg', alt: 'Equipo reunido en el área de entrenamiento.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (14).jpeg', alt: 'Integrantes del club reunidos en una actividad.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (18).jpeg', alt: 'Practicantes de taekwondo posan en el tatami.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (20).jpeg', alt: 'Grupo con doboks reunido en el dojang.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (21).jpeg', alt: 'Practicantes participan en una sesión de entrenamiento.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (23).jpeg', alt: 'Grupo reunido en una jornada deportiva.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (28).jpeg', alt: 'Practicantes posan juntos en el espacio de entrenamiento.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (30).jpeg', alt: 'Deportistas reunidos en una competencia bajo techo.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (35).jpeg', alt: 'Dos taekwondistas practican combate con protecciones.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (39).jpeg', alt: 'Grupo de practicantes reunido al aire libre.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (40).jpeg', alt: 'Practicantes posan con sus uniformes de taekwondo.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (44).jpeg', alt: 'Grupo de taekwondistas reunido en una sala de práctica.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (52).jpeg', alt: 'Participantes reunidos en un espacio deportivo.' },
+  { file: 'WhatsApp Image 2026-10-02 at 12.36.24 PM (9).jpeg', alt: 'Grupo de practicantes de taekwondo posa en el dojang.' },
+]
+
+export const galleryImages = galleryPhotos.map((photo, index) => ({
+  ...photo,
+  src: `/images/gallery/${encodeURI(photo.file)}`,
+  label: `RECUERDO ${String(index + 1).padStart(2, '0')}`,
+}))

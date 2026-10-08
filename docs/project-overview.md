@@ -1,3 +1,3 @@
-# Project Overview
+# Resumen anterior
 
-CAMU Taekwondo is presented through a single-page editorial landing experience. The site introduces club principles, location schedules, training, instructors and contact, centered on a demo-class conversion path. Current factual content follows the prompt; uncertain information remains a placeholder.
+El contexto vigente de objetivo, referencia, audiencia y estado se consolidó en [`project-context.md`](project-context.md). Usa ese archivo como fuente canónica para evitar mantener dos versiones.
