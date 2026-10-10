@@ -5,7 +5,7 @@ import { principles } from '../data/principles'
     <section id="principios" class="principles section-pad">
         <div class="wrap">
             <div class="section-heading reveal">
-                <p class="eyebrow">01 / EL CAMINO</p>
+                <p class="eyebrow">03 / EL CAMINO</p>
                 <h2>¿POR QUÉ <span>TKD?</span></h2>
                 <p class="heading-note">Más que una práctica. Una forma de avanzar.</p>
             </div>

@@ -11,6 +11,7 @@ import InstructorsSection from './components/InstructorsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import AppFooter from './components/AppFooter.vue'
 import { useReveal } from './composables/useReveal'
+import BJJ from './components/BJJ.vue'
 useReveal()
 function smoothScroll(event: Event) {
   const link = (event.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null
@@ -24,4 +25,18 @@ function smoothScroll(event: Event) {
 onMounted(() => document.addEventListener('click', smoothScroll))
 onUnmounted(() => document.removeEventListener('click', smoothScroll))
 </script>
-<template><AppHeader/><main><HeroSection/><PrinciplesSection/><AboutCamuSection/><LocationsSection/><GallerySection/><TrainingSection/><InstructorsSection/><ContactSection/></main><AppFooter/></template>
+<template>
+  <AppHeader />
+  <main>
+    <HeroSection />
+    <AboutCamuSection />
+    <PrinciplesSection />
+    <BJJ />
+    <LocationsSection />
+    <GallerySection />
+    <TrainingSection />
+    <InstructorsSection />
+    <ContactSection />
+  </main>
+  <AppFooter />
+</template>
