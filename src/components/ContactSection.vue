@@ -19,7 +19,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
             <!-- CONTENIDO PRINCIPAL -->
             <div class="contact-copy reveal">
 
-                <p class="eyebrow">07 / TU PRIMER PASO</p>
+                <p class="eyebrow">10 / TU PRIMER PASO</p>
 
                 <h2>
                     EMPIEZA<br />

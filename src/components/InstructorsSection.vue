@@ -6,7 +6,7 @@ import { instructors } from '../data/instructors'
         <div class="wrap">
             <div class="section-heading section-heading-row reveal">
                 <div>
-                    <p class="eyebrow">06 / QUIENES GUÍAN</p>
+                    <p class="eyebrow">09 / QUIENES GUÍAN</p>
                     <h2>INSTRUCTORES<span>.</span></h2>
                 </div>
                 <p class="heading-note">Experiencia y compromiso<br />en cada entrenamiento.</p>

@@ -37,7 +37,7 @@ function closeLocation() {
         <div class="wrap">
             <div class="section-heading section-heading-row reveal">
                 <div>
-                    <p class="eyebrow">03 / ENCUENTRA TU DOJANG</p>
+                    <p class="eyebrow">06 / ENCUENTRA TU DOJANG</p>
                     <h2>SEDES Y<br /><span>HORARIOS</span></h2>
                 </div>
 

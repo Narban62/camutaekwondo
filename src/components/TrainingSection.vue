@@ -7,7 +7,7 @@ import { media } from '../data/media'
             aria-label="Entrenamiento intenso de artes marciales"></div>
         <div class="training-overlay"></div>
         <div class="wrap training-content reveal">
-            <p class="eyebrow">05 / ENTRENA CON PROPÓSITO</p>
+            <p class="eyebrow">08 / ENTRENA CON PROPÓSITO</p>
             <p class="training-kicker">EL RETO ES</p>
             <h2>COMBATE<span>.</span></h2>
             <div class="training-bottom">

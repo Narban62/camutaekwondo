@@ -86,7 +86,7 @@ function endTouch(event: TouchEvent) {
     <div class="wrap">
       <div class="section-heading section-heading-row reveal">
         <div>
-          <p class="eyebrow">04 / ARCHIVO CAMU</p>
+          <p class="eyebrow">07 / ARCHIVO CAMU</p>
           <h2 id="gallery-title">RECUERDOS<span>.</span></h2>
         </div>
         <p class="heading-note">Momentos guardados en el camino.<br />Un recuerdo a la vez.</p>

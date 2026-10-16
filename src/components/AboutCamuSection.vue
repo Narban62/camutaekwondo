@@ -99,7 +99,7 @@ function closeCard() {
                         <span>05</span>
 
                         <div class="about-card-content">
-                            <h3>CONTEMPORÁNEO</h3>
+                            <h3>NUESTRO EQUIPO</h3>
 
                             <p>
                                 Conoce a las personas que actualmente representan
