@@ -25,12 +25,13 @@ Personas que consultan Taekwondo, sedes, horarios e instructores de CAMU. El con
 
 ## Estructura de página actual
 
-Header con navegación; hero; principios; sección institucional con tarjetas y modal; sedes y horarios; sección `RECUERDOS` con 24 fotografías locales y lightbox; combate/entrenamientos; instructores; contacto que abre una conversación de WhatsApp; footer. La galería presenta parte del archivo fotográfico sin añadir nombres, fechas ni eventos.
+Header con navegación; hero; principios; sección institucional con tarjetas y modales; sedes y horarios; sección `RECUERDOS` con 24 fotografías locales y lightbox; combate/entrenamientos; instructores; contacto que abre una conversación de WhatsApp; footer. La sección institucional incluye historia del fundador y contenido sobre el equipo, la labor y la importancia del club. La galería presenta parte del archivo fotográfico sin añadir nombres, fechas ni eventos.
 
 ## Contexto importante para cambios
 
 - Mantener las cuatro sedes y los perfiles conocidos sin añadir datos no verificados.
 - El código contiene actualmente un número de WhatsApp y textos institucionales específicos. Su procedencia/autorización no está documentada; ver `docs/content.md`.
-- Las fotos de hero, galería y perfiles principales apuntan a Unsplash. El logo y las fotos del modal institucional son locales.
+- La galería `RECUERDOS` usa 24 fotografías locales de `public/images/gallery/`; su listado y textos alternativos están en `src/data/gallery.ts`. Hero, entrenamiento y perfiles de instructores todavía usan imágenes remotas de Unsplash. About usa el logo local como fondo estilizado de toda la sección, sin fotografía adicional; las fotos de los modales institucionales también son locales.
+- La galería carga 16 fotografías inicialmente y permite ampliar el listado en lotes. Su lightbox admite cierre, anterior/siguiente, teclas Escape y flechas, foco contenido/restaurado y navegación horizontal táctil.
 - El contenido institucional y el enlace de WhatsApp están escritos directamente en componentes; no todo el contenido está separado en `src/data/`.
 - `docs/continuation.md` registra los problemas que requieren atención antes de afirmar que el estado está validado.

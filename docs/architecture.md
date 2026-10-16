@@ -23,7 +23,7 @@ Vite, TypeScript, configuración y dependencias se describen en `vite.config.ts`
 - `AppHeader.vue`: marca, navegación por anclas y menú móvil.
 - `HeroSection.vue`: hero y CTA.
 - `PrinciplesSection.vue`: lista desde `data/principles.ts`.
-- `AboutCamuSection.vue`: tarjetas y modal para misión, visión, pilares, fundación y contemporáneo. El copy está inline en el componente; aún no se separó a `src/data/`.
+- `AboutCamuSection.vue`: sección institucional con tarjetas y modal para misión, visión, pilares, fundación y contemporáneo. La historia del fundador, los perfiles actuales, la labor e importancia del club están agrupados en bloques semánticos dentro del modal. Los modales usan Vue `Teleport` a `body` para no quedar atrapados bajo el stacking context del fondo de sección. El copy permanece inline en el componente; aún no se separó a `src/data/`.
 - `LocationsSection.vue`: tarjetas desde `data/locations.ts`.
 - `GallerySection.vue`: sección `RECUERDOS`, grid de imágenes, carga progresiva de miniaturas y lightbox con foco administrado, teclado y gesto horizontal.
 - `TrainingSection.vue`: bloque visual de combate/entrenamiento.
@@ -35,7 +35,7 @@ Vite, TypeScript, configuración y dependencias se describen en `vite.config.ts`
 
 `App.vue` compone los componentes, instala `useReveal()` y escucha clics en anclas para scroll suave. Los datos repetidos de principios, ubicaciones, instructores, galería y medios viven en `src/data/`. Excepciones actuales: el contenido institucional y el número/mensaje de WhatsApp permanecen en los componentes.
 
-Los archivos `src/assets/images/logo.png` y `public/about/{fundador,director,subdirector}.jpeg` son locales. Las fotos seleccionadas para recuerdos están en `public/images/gallery/`; el inventario tiene 136 JPEG y 2 MP4, y `src/data/gallery.ts` configura 24 JPEG por nombre de archivo y construye rutas `/images/gallery/...` compatibles con Vite. No se mueve ni copia el archivo original. El resto de imágenes de hero, about principal, training e instructores mantiene URLs de Unsplash en `src/data/`.
+Los archivos `src/assets/images/logo.png` y `public/about/{fundador,director,subdirector}.jpeg` son locales. `AboutCamuSection.vue` importa el logo local como una única imagen decorativa absoluta que cubre la sección About con `object-fit: contain`; CSS controla opacidad, filtro y overlay. La foto editorial remota de About fue retirada de `src/data/media.ts`. Las fotos seleccionadas para recuerdos están en `public/images/gallery/`; el inventario tiene 136 JPEG y 2 MP4, y `src/data/gallery.ts` configura 24 JPEG por nombre de archivo y construye rutas `/images/gallery/...` compatibles con Vite. No se mueve ni copia el archivo original. Las imágenes de hero y training mantienen URLs de Unsplash en `src/data/media.ts`; las de instructores están en `src/data/instructors.ts`.
 
 ## Galería y lightbox
 

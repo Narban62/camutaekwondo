@@ -18,9 +18,11 @@ export const locations = [
         discipline: 'BRAZILIAN JIU-JITSU',
         address: '[POR DEFINIR]',
         schedule: ['10:30 — 12:00', '15:00 — 16:30'],
-        days: ':Lunes a viernes',
+        days: 'Lunes a viernes',
         fullSchedule: [
-            { days: 'Por definir', time: 'Por definir' },
+            { days: 'Lunes y miércoles', time: '10:30 — 12:00' },
+            { days: 'Martes y jueves', time: '15:00 — 16:30' },
+            { days: 'Viernes', time: '10:30 — 12:00' },
         ],
         instructorId: 'federico',
         whatsappNumber: '593998053126',
@@ -34,6 +36,7 @@ export const locations = [
         fullSchedule: [
             { days: 'Lunes y miércoles', time: '12:00 — 13:30' },
             { days: 'Martes y jueves', time: '13:30 — 15:00' },
+            { days: 'Viernes', time: '12:00 — 13:30' },
         ],
         instructorId: 'anthony',
         whatsappNumber: '593XXXXXXXXX',
@@ -45,7 +48,9 @@ export const locations = [
         days: 'Lunes a viernes',
         schedule: ['12:00 — 13:30', '13:30 — 15:00'],
         fullSchedule: [
-            { days: 'Por definir', time: 'Por definir' },
+            { days: 'Lunes y miércoles', time: '12:00 — 13:30' },
+            { days: 'Martes y jueves', time: '13:30 — 15:00' },
+            { days: 'Viernes', time: '12:00 — 13:30' },
         ],
         instructorId: 'joel',
         whatsappNumber: '593XXXXXXXXX',
@@ -57,9 +62,11 @@ export const locations = [
         days: 'Lunes a viernes',
         schedule: ['12:00 — 13:30', '13:30 — 15:00'],
         fullSchedule: [
-            { days: 'Por definir', time: 'Por definir' },
+            { days: 'Lunes y miércoles', time: '12:00 — 13:30' },
+            { days: 'Martes y jueves', time: '13:30 — 15:00' },
+            { days: 'Viernes', time: '12:00 — 13:30' },
         ],
-        instructorId: 'instructor-4',
+        instructorId: 'wlady',
         whatsappNumber: '593XXXXXXXXX',
     },
     

@@ -1,3 +1,6 @@
+import wlady from '../assets/images/wlady.jpeg'
+import joel from '../assets/images/joel.jpeg'
+import antony from '../assets/images/antony.jpeg'
 export const instructors = [
     {
         id: 'anthony',
@@ -6,8 +9,18 @@ export const instructors = [
         title: 'PhD ...',
         dan: '6TO',
         experience: '......',
-        image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85',
+        image: antony,
         alt: 'Fotografía de Anthony, director del club',
+    },
+    {
+        id: 'wlady',
+        name: 'Wladimir',
+        role: 'Instructor',
+        title: 'LIC ...',
+        dan: '5TO',
+        experience: 'Por definir',
+        image: wlady,
+        alt: 'Fotografía del cuarto instructor',
     },
     {
         id: 'joel',
@@ -16,7 +29,7 @@ export const instructors = [
         title: 'LIC ...',
         dan: '3RO',
         experience: '......',
-        image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=85',
+        image: joel,
         alt: 'Fotografía de Joel, entrenador del club',
     },
     {
@@ -28,16 +41,6 @@ export const instructors = [
         experience: 'Por definir',
         image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=85',
         alt: 'Fotografía de Federico, entrenador del club',
-    },
-    {
-        id: 'instructor-4',
-        name: 'Nombre del cuarto instructor',
-        role: 'Instructor',
-        title: 'Por definir',
-        dan: 'Por definir',
-        experience: 'Por definir',
-        image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=85',
-        alt: 'Fotografía del cuarto instructor',
     },
     {
         id: 'instructor-5',

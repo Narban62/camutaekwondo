@@ -8,7 +8,7 @@ import { media } from '../data/media'
         <div class="hero-grain"></div>
         <div class="hero-content wrap">
             <p class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> DISCIPLINA · CONTROL · SUPERACIÓN</p>
-            <h1><span class="hero-word">CAMU</span><span class="hero-subtitle">TAEKWONDO</span></h1>
+            <h1><span class="hero-word">CAMU</span><span class="hero-subtitle">CLUB DE ARTES MARCIALES UNIVERSITARIO</span><span class="hero-subtitle">TAEKWONDO</span></h1>
             <div class="hero-bottom">
                 <p class="hero-quote">SI TE RINDES ANTE EL DOLOR<br />O EL MIEDO NUNCA ALCANZARAS<br /><em>LA
                         GLORIA</em></p>

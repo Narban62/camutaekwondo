@@ -35,13 +35,15 @@ Los tokens de color raíz, acento y líneas no coinciden con el sistema lima/bla
 
 - Header fijo/sticky, wordmark gráfico basado en `src/assets/images/logo.png`, menú hamburguesa en móvil.
 - Hero a viewport completo con fotografía de fondo, filtros/overlays, grano y titular grande.
-- Principios como lista editorial con números, divisores y hover.
+- Principios como lista editorial con número, nombre, romanización y significado; valores complementarios en una lista secundaria con divisores, sin tarjetas.
+- En móvil las filas de principios pasan a dos líneas y las descripciones quedan bajo el nombre; los valores complementarios se reordenan para lectura en una columna en pantallas estrechas.
 - Sedes en tarjetas oscuras; galería `RECUERDOS` en mosaico responsive de 12 columnas en desktop, 8 en tablet y 4 en móvil. Las tarjetas móviles abarcan dos columnas para mantener un área cómoda de lectura y toque.
-- Institucional con tarjetas y modal; entrenamiento con fotografía panorámica.
+- Institucional con tarjetas y modal oscuro. Un solo logo local se amplía como imagen de fondo de toda About, centrado y completo con `object-fit: contain` para evitar recortes y zoom excesivo; se desatura, desenfoca levemente y atenúa con overlay carbón para conservar el contraste. No se usa otra fotografía en esa sección. La introducción se organiza en dos columnas y las cinco tarjetas en una retícula editorial de tres tarjetas arriba y dos más anchas abajo; en tablet pasan a dos columnas y en móvil a filas compactas. El contenido permanece visible sin depender de la animación de revelado. Los modales de Fundación y Contemporáneo usan un ancho mayor para el contenido editorial, ficha histórica, perfiles en dos columnas y bloques de labor/importancia que se apilan en móvil.
+- Los datos históricos usan una ficha de dos columnas y un hito con borde de acento; las tareas del club aparecen como lista editorial con divisores y la importancia como lista numerada. Las credenciales se muestran como etiquetas discretas con los colores y líneas existentes.
 - Botones en mayúsculas con flecha; la apariencia final depende del token rojo actual. El botón de carga conserva borde/foco visible.
 - Hover de galería: zoom leve, saturación y overlay con indicador de apertura; las transiciones respetan `prefers-reduced-motion`.
 - Lightbox: fondo oscuro, imagen contenida en viewport, controles circulares anterior/siguiente y cierre superior; en móvil los controles se sitúan a los lados y el gesto horizontal navega.
-- Galería usa fotos locales de `public/images/gallery/`; miniaturas usan lazy loading salvo las dos iniciales. Hero/about principal/training/instructores siguen remotos; logo y fotos institucionales son locales.
+- Galería usa fotos locales de `public/images/gallery/`; miniaturas usan lazy loading salvo las dos iniciales. Hero/training e instructores siguen remotos; About usa el logo y las fotos institucionales son locales.
 - `animations.css` anima entrada y hover, y reduce animación bajo `prefers-reduced-motion`.
 
 ## Pendientes de identidad visual
