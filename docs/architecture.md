@@ -48,3 +48,29 @@ Los archivos `src/assets/images/logo.png` y `public/about/{fundador,director,sub
 ## Convenciones y límites
 
 Componentes en PascalCase, composable `useReveal`, datos en módulos de `src/data/`, clases CSS kebab-case. No hay router. Antes de mover el copy inline a datos, conservar el texto existente y verificar datos reales con la fuente correspondiente.
+
+## Discipline and photo sources
+
+- `BJJ.vue` uses the local images centralized in `src/data/bjjGallery.ts`, which imports three photos from `src/assets/images/fondobjj*.jpeg`. This data feeds both the BJJ presentation and the BJJ album in `GallerySection.vue`.
+- `GallerySection.vue` controls the active album (`RECUERDOS CAMU` or `BJJ / JIU-JITSU`) and shares the existing grid and lightbox. Previous/next navigation uses the active album list.
+- `TrainingSection.vue` presents the combat training hero. `InstructorsSection.vue` owns accessible tabs for instructor profiles and the black-belt archive. `blackBeltProfiles` in `src/data/instructors.ts` derives records with a defined DAN grade and local photo, excluding the remote placeholder.
+- Instructor tabs use buttons with ARIA tablist/tab/tabpanel roles and support left/right arrow keys. Their styles live in `src/styles/globals.css`.
+
+Resource correction: `src/data/media.ts` imports local `hero.jpeg` and `combate.jpeg`; the instructor list imports four local portraits plus one remote placeholder. The BJJ album and training DAN archive exclude external photo URLs.
+
+BJJ layout note: `BJJ.vue` no longer renders a full-section decorative photo. `globals.css` owns the BJJ section styles in one primary block; hero content is positioned in flex flow with a visible z-layer above the image/overlay. Responsive feature grids use three columns on desktop, two columns at tablet widths, and a single column on narrow screens.
+
+BJJ hero and community image elements use CSS `background-image` from local `bjjGalleryImages`, with `background-size: cover`. Their dark gradients and shared grain layer follow the HeroSection.vue pattern.
+
+## Pestaña BJJ y archivo de cinturones
+
+- `GallerySection.vue` renderiza las 11 entradas locales de `src/data/bjjGallery.ts` en la pestaña BJJ, con layout independiente del mosaico principal y el lightbox compartido.
+- `InstructorsSection.vue` renderiza el listado `blackBeltProfiles` derivado de todas las entradas con imagen local en `src/data/instructors.ts`. Los grados pendientes se muestran como `DAN POR DEFINIR`, sin filtrar esos perfiles. IDs únicos permiten renderizado estable.
+
+## Estado actualizado: datos de cinturones negros
+
+La lista vigente incluye todos los perfiles con imagen local (9 registros), no solo los perfiles con grado DAN definido. Las menciones anteriores de “cuatro perfiles definidos” y el filtro por DAN confirmado quedaron obsoletas con la corrección del 2026-10-22: los grados pendientes se muestran explícitamente como `DAN POR DEFINIR`.
+
+## Enlace social del footer
+
+`AppFooter.vue` define `facebookUrl` y lo presenta como enlace externo accesible con icono SVG inline, `target="_blank"` y `rel="noopener noreferrer"`. Instagram permanece como pendiente porque no hay URL disponible. Los estilos están en `globals.css` bajo `.footer-social-link`.

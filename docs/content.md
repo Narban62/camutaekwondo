@@ -77,3 +77,23 @@ Credenciales incompletas y fotos genéricas/remotas: conservar como placeholders
 ## SEO
 
 Title: `CAMU Taekwondo | Disciplina, Fuerza y Gloria`. Meta description y Open Graph están definidos en `index.html`.
+
+### BJJ album
+
+The `BJJ / JIU-JITSU` tab presents three local photos from `src/assets/images/fondobjj.jpeg`, `fondobjj2.jpeg` and `fondobjj3.jpeg`. Descriptions are neutral and do not assign names, dates or events. The album shares the main gallery lightbox.
+
+### Black belt profiles
+
+The `CINTURONES NEGROS` tab inside `InstructorsSection.vue` shows local profiles with a defined DAN grade in `src/data/instructors.ts`: Anthony (6TO), Wladimir (5TO), Joel (3RO) and Federico (1ER). Existing instructor photos are reused. Names and grades reflect current project data but must be confirmed by CAMU before publication as official credentials. The remote placeholder profile is excluded.
+
+## Álbum BJJ y cinturones negros
+
+- Álbum `BJJ / JIU-JITSU`: 11 imágenes locales de `src/data/bjjGallery.ts`; etiquetas numeradas descriptivas, sin atribuir fechas ni eventos no confirmados.
+- Pestaña `CINTURONES NEGROS`: muestra 9 perfiles con foto local actualmente configurados en `src/data/instructors.ts`. Cuatro grados están especificados en el archivo; los restantes se presentan como `DAN POR DEFINIR`. Confirmar nombres y grados pendientes con CAMU antes de publicación.
+
+Corrección vigente (2026-10-22): la pestaña de cinturones negros presenta los nueve perfiles con fotografía local, incluidos los que tienen grado pendiente. No se deben omitir por falta de grado; su distintivo indica `DAN POR DEFINIR`. La cantidad corresponde al estado actual de `src/data/instructors.ts` y debe revisarse allí ante futuras altas o bajas.
+
+## Redes sociales del footer
+
+- Facebook: enlace configurado a `https://www.facebook.com/share/1L1ThAW5n5/?mibextid=wwXIfr`, suministrado en `AppFooter.vue`.
+- Instagram: `[POR DEFINIR]`; no hay URL configurada.

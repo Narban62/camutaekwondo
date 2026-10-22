@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import '../styles/globals.css'
+import bjjHeroImage from '../assets/images/fondobjj3.jpeg'
+import bjjCommunityImage from '../assets/images/fondobjj.jpeg'
 
 const whatsappNumber = '593998053126'
 
@@ -34,18 +35,14 @@ const features = [
 
 <template>
     <section id="bjj" class="bjj section-pad">
-        <div class="wrap">
+        
 
             <!-- PRESENTACIÓN -->
             <div class="bjj-hero reveal">
-                <img
-                    class="bjj-hero-image"
-                    src="/src/assets/images/bjj/bjj.jpg"
-                    alt="Entrenamiento de Brazilian Jiu-Jitsu"
-                    loading="lazy"
-                />
-
-                <div class="bjj-hero-overlay"></div>
+                <div class="bjj-hero-image" :style="{ backgroundImage: `url('${bjjHeroImage}')` }" role="img"
+                    aria-label="Práctica de Brazilian Jiu-Jitsu en CAMU"></div>
+                
+                <div class="hero-grain bjj-hero-grain" aria-hidden="true"></div>
 
                 <div class="bjj-hero-content">
                     <p class="eyebrow">04 / OTRA FORMA DE COMBATIR</p>
@@ -67,14 +64,12 @@ const features = [
                     </a>
                 </div>
 
-                <span class="bjj-hero-index">CAMU / BJJ 001</span>
             </div>
 
             <!-- INTRODUCCIÓN -->
-            <div
-                id="bjj-disciplina"
-                class="bjj-intro reveal"
-            >
+            <div class="wrap">
+            <div id="bjj-disciplina" class="bjj-intro reveal">
+
                 <div class="bjj-intro-heading">
                     <p class="eyebrow">5.1 / LA DISCIPLINA</p>
 
@@ -99,14 +94,12 @@ const features = [
                     </p>
                 </div>
             </div>
+            </div>
 
             <!-- CARACTERÍSTICAS -->
+            <div class="wrap">
             <div class="bjj-features">
-                <article
-                    v-for="feature in features"
-                    :key="feature.number"
-                    class="bjj-feature reveal"
-                >
+                <article v-for="feature in features" :key="feature.number" class="bjj-feature reveal">
                     <span class="bjj-feature-number">
                         {{ feature.number }}
                     </span>
@@ -119,16 +112,13 @@ const features = [
                     <span class="bjj-feature-plus">+</span>
                 </article>
             </div>
+            </div>
 
             <!-- COMUNIDAD -->
             <div class="bjj-community reveal">
-                <div class="bjj-community-image">
-                    <img
-                        src="/src/assets/images/bjj/bjj.jpg"
-                        alt="Compañeros practicando artes marciales"
-                        loading="lazy"
-                    />
-                </div>
+                <div class="bjj-community-image" :style="{ backgroundImage: `url('${bjjCommunityImage}')` }" role="img"
+                    aria-label="Comunidad CAMU reunida durante una práctica de BJJ"></div>
+                <div class="hero-grain bjj-community-grain" aria-hidden="true"></div>
 
                 <div class="bjj-community-copy">
                     <p class="eyebrow">5.2 / COMUNIDAD CAMU</p>
@@ -148,17 +138,11 @@ const features = [
                     <a :href="whatsappUrl" class="bjj-link bjj-link-dark" target="_blank" rel="noopener noreferrer">
                         CONOCE CAMU BJJ
                         <span>↗</span>
-                  
-</a>
+
+                    </a>
                 </div>
             </div>
 
-            <!-- CIERRE -->
-            <div class="bjj-footer reveal">
-                <p>CAMU / ARTES MARCIALES</p>
-                <span>EL SIGUIENTE PASO EMPIEZA EN EL TATAMI.</span>
-            </div>
-
-        </div>
+       
     </section>
 </template>

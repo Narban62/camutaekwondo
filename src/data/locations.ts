@@ -1,31 +1,16 @@
 export const locations = [
     {
         name: 'CAMU UCE',
-        discipline: 'TAEKWONDO',
-        address: '[POR DEFINIR]',
+        discipline: 'TAEKWONDO Y BRAZILIAN JIU-JITSU',
+        address: 'Campus universitario, Facultad de Ciencias Psicológicas, aulas aledañas a la Facultad de Comunicación',
         days: 'Lunes a viernes',
-        schedule: ['12:00 — 13:30', '13:30 — 15:00'],
+        schedule: ['BRAZILIAN JIU-JITSU - 10:30 — 12:00', 'TAEKWONDO - 12:00 — 15:00'],
         fullSchedule: [
-            { days: 'Lunes y miércoles', time: '12:00 — 13:30' },
-            { days: 'Martes y jueves', time: '13:30 — 15:00' },
-            { days: 'Viernes', time: '12:00 — 13:30' },
+            { days: 'BRAZILIAN JIU-JITSU - Lunes a viernes', time: '10:30 — 12:00' },
+            { days: 'TAEKWONDO - Lunes a viernes', time: '12:00 — 15:00' },
         ],
-        instructorId: 'anthony',
+        instructorId: ['anthony', 'federico','wlady'],
         whatsappNumber: '593XXXXXXXXX',
-    },
-    {
-        name: 'CAMU UCE BJJ',
-        discipline: 'BRAZILIAN JIU-JITSU',
-        address: '[POR DEFINIR]',
-        schedule: ['10:30 — 12:00', '15:00 — 16:30'],
-        days: 'Lunes a viernes',
-        fullSchedule: [
-            { days: 'Lunes y miércoles', time: '10:30 — 12:00' },
-            { days: 'Martes y jueves', time: '15:00 — 16:30' },
-            { days: 'Viernes', time: '10:30 — 12:00' },
-        ],
-        instructorId: 'federico',
-        whatsappNumber: '593998053126',
     },
     {
         name: 'CAMU NORTE',
@@ -42,7 +27,7 @@ export const locations = [
         whatsappNumber: '593XXXXXXXXX',
     },
     {
-        name: 'CAMU COMUNA',
+        name: 'CAMU ATUCUCHO',
         discipline: 'TAEKWONDO',
         address: '[POR DEFINIR]',
         days: 'Lunes a viernes',

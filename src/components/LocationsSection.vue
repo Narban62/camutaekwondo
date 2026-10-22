@@ -3,14 +3,20 @@ import { computed, ref } from 'vue'
 import { locations } from '../data/locations'
 import { instructors } from '../data/instructors'
 
-const selectedLocation = ref<(typeof locations)[number] | null>(null)
+type Location = (typeof locations)[number]
 
-const selectedInstructor = computed(() => {
-    if (!selectedLocation.value) return null
+const selectedLocation = ref<Location | null>(null)
 
-    return instructors.find(
-        instructor => instructor.id === selectedLocation.value?.instructorId
-    ) ?? null
+const selectedInstructors = computed(() => {
+    if (!selectedLocation.value) return []
+
+    const instructorIds = Array.isArray(selectedLocation.value.instructorId)
+        ? selectedLocation.value.instructorId
+        : [selectedLocation.value.instructorId]
+
+    return instructorIds
+        .map(id => instructors.find(instructor => instructor.id === id))
+        .filter(instructor => instructor !== undefined)
 })
 
 const whatsappUrl = computed(() => {
@@ -23,7 +29,7 @@ const whatsappUrl = computed(() => {
     return `https://wa.me/${selectedLocation.value.whatsappNumber}?text=${message}`
 })
 
-function openLocation(place: (typeof locations)[number]) {
+function openLocation(place: Location) {
     selectedLocation.value = place
 }
 
@@ -31,6 +37,7 @@ function closeLocation() {
     selectedLocation.value = null
 }
 </script>
+
 
 <template>
     <section id="sedes" class="locations section-pad">
@@ -49,15 +56,10 @@ function closeLocation() {
 
             <!-- TARJETAS DE SEDES -->
             <div class="location-grid">
-                <article
-                    v-for="(place, index) in locations"
-                    :key="place.name"
-                    class="location-card reveal"
-                    :class="{
-                        'location-card-bjj':
-                            place.discipline === 'BRAZILIAN JIU-JITSU'
-                    }"
-                >
+                <article v-for="(place, index) in locations" :key="place.name" class="location-card reveal" :class="{
+                    'location-card-bjj':
+                        place.discipline === 'BRAZILIAN JIU-JITSU'
+                }">
                     <div class="location-top">
                         <span>
                             {{ String(index + 1).padStart(2, '0') }} / SEDE
@@ -82,11 +84,7 @@ function closeLocation() {
                         </p>
                     </div>
 
-                    <button
-                        class="text-link location-open"
-                        type="button"
-                        @click="openLocation(place)"
-                    >
+                    <button class="text-link location-open" type="button" @click="openLocation(place)">
                         VER INFORMACIÓN <span>↗</span>
                     </button>
                 </article>
@@ -95,22 +93,12 @@ function closeLocation() {
 
         <!-- VENTANA EMERGENTE -->
         <Transition name="location-modal">
-            <div
-                v-if="selectedLocation"
-                class="location-modal"
-                role="dialog"
-                aria-modal="true"
-                :aria-label="`Información de ${selectedLocation.name}`"
-                @click.self="closeLocation"
-                @keydown.esc="closeLocation"
-            >
+            <div v-if="selectedLocation" class="location-modal" role="dialog" aria-modal="true"
+                :aria-label="`Información de ${selectedLocation.name}`" @click.self="closeLocation"
+                @keydown.esc="closeLocation">
                 <div class="location-modal-box">
-                    <button
-                        class="location-modal-close"
-                        type="button"
-                        aria-label="Cerrar ventana"
-                        @click="closeLocation"
-                    >
+                    <button class="location-modal-close" type="button" aria-label="Cerrar ventana"
+                        @click="closeLocation">
                         ×
                     </button>
 
@@ -132,64 +120,55 @@ function closeLocation() {
                     <div class="location-modal-schedule">
                         <h4>HORARIOS DE ENTRENAMIENTO</h4>
 
-                        <div
-                            v-for="(item, index) in selectedLocation.fullSchedule"
-                            :key="`${item.days}-${index}`"
-                            class="location-modal-schedule-row"
-                        >
+                        <div v-for="(item, index) in selectedLocation.fullSchedule" :key="`${item.days}-${index}`"
+                            class="location-modal-schedule-row">
                             <span>{{ item.days }}</span>
                             <strong>{{ item.time }}</strong>
                         </div>
                     </div>
 
+
                     <!-- INSTRUCTOR -->
                     <div class="location-modal-instructor">
-                        <h4>INSTRUCTOR A CARGO</h4>
+                        <h4>INSTRUCTOR{{ selectedInstructors.length === 1 ? '' : 'ES' }} A CARGO</h4>
 
-                        <div v-if="selectedInstructor" class="instructor-profile">
+                        <div v-for="instructor in selectedInstructors" :key="instructor.id" class="instructor-profile">
                             <div class="instructor-profile-image">
-                                <img
-                                    :src="selectedInstructor.image"
-                                    :alt="selectedInstructor.alt"
-                                />
+                                <img :src="instructor.image" :alt="instructor.alt || instructor.name" />
                             </div>
 
                             <div class="instructor-profile-info">
                                 <span class="instructor-profile-role">
-                                    {{ selectedInstructor.role }}
+                                    {{ instructor.role }}
                                 </span>
 
-                                <h5>{{ selectedInstructor.name }}</h5>
+                                <h5>{{ instructor.name }}</h5>
 
                                 <p>
                                     <strong>Formación:</strong>
-                                    {{ selectedInstructor.title }}
+                                    {{ instructor.title }}
                                 </p>
 
                                 <p>
                                     <strong>Grado:</strong>
-                                    {{ selectedInstructor.dan }}
+                                    {{ instructor.dan }}
                                 </p>
 
                                 <p>
                                     <strong>Experiencia:</strong>
-                                    {{ selectedInstructor.experience }}
+                                    {{ instructor.experience }}
                                 </p>
                             </div>
                         </div>
 
-                        <p v-else class="location-modal-pending">
+                        <p v-if="selectedLocation && selectedInstructors.length === 0" class="location-modal-pending">
                             La información del instructor está pendiente de actualización.
                         </p>
                     </div>
 
+
                     <!-- CONTACTO -->
-                    <a
-                        class="location-modal-contact"
-                        :href="whatsappUrl"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a class="location-modal-contact" :href="whatsappUrl" target="_blank" rel="noopener noreferrer">
                         CONTACTAR POR WHATSAPP
                         <span>↗</span>
                     </a>
@@ -198,5 +177,3 @@ function closeLocation() {
         </Transition>
     </section>
 </template>
-
-

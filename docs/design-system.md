@@ -49,3 +49,20 @@ Los tokens de color raíz, acento y líneas no coinciden con el sistema lima/bla
 ## Pendientes de identidad visual
 
 Confirmar la paleta oficial con el diseño de referencia: el código actual usa raíz violeta y acento rojo, mientras que documentación anterior indicaba lima. Revisar también el favicon presente (`src/assets/icons/camu.ico`) y el responsive en navegador.
+
+## Recent visual additions
+
+- BJJ now follows the landing's content width, display type scale and spacing rhythm. Its three feature items use three columns on desktop and a compact list on mobile; the hero height scales with `clamp()`.
+- `RECUERDOS` has album tabs with an active accent underline. The BJJ album uses three columns on desktop, two on tablet/mobile, and one below 380px; it shares the existing lightbox.
+- Instructors has `INSTRUCTORES` and `CINTURONES NEGROS` tabs. The black-belt profile gallery uses four columns on desktop, two on tablet/mobile, and one below 380px. Visible keyboard focus is inherited from global button styles.
+
+## BJJ visual correction (2026-10-22)
+
+The full-section BJJ photo watermark was removed to reduce visual noise and prevent it from competing with section content. The hero copy now stays in normal flex flow above its image overlay; the BJJ wrap has a defined stacking layer. BJJ responsive rules are consolidated with the section styles and use the existing color, type, width, and spacing tokens.
+
+BJJ image treatment: its hero and community panel use local CSS `background-image` layers, matching HeroSection.vue. Both use cover sizing, a dark gradient overlay and the shared grain texture; the community photo spans the complete panel behind its copy.
+
+## Ajustes de visibilidad (2026-10-22)
+
+- La galería BJJ mantiene su propia retícula después de las reglas del mosaico general: 3 columnas desktop, 2 hasta 600px y 1 hasta 380px; filas con altura explícita para evitar miniaturas comprimidas. Sus elementos no heredan spans de la galería CAMU.
+- La pestaña de cinturones negros muestra todos los perfiles con foto local. Los grados sin confirmar siguen como `Por definir`; la lista excluye referencias remotas. A 900px baja a dos columnas y bajo 380px a una columna, sin limitar la altura del contenido.

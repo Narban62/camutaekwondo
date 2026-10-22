@@ -35,3 +35,11 @@ Header con navegación; hero; principios; sección institucional con tarjetas y 
 - La galería carga 16 fotografías inicialmente y permite ampliar el listado en lotes. Su lightbox admite cierre, anterior/siguiente, teclas Escape y flechas, foco contenido/restaurado y navegación horizontal táctil.
 - El contenido institucional y el enlace de WhatsApp están escritos directamente en componentes; no todo el contenido está separado en `src/data/`.
 - `docs/continuation.md` registra los problemas que requieren atención antes de afirmar que el estado está validado.
+
+## Discipline sections and galleries
+
+The landing now includes Brazilian Jiu-Jitsu in `src/components/BJJ.vue` and two albums inside `RECUERDOS`: the general CAMU archive and a local BJJ selection. `src/data/bjjGallery.ts` centralizes the BJJ images and labels.
+
+The training section presents the combat training hero. Instructors includes tabs for the instructor list and a gallery of profiles with a defined DAN grade and local image. The gallery derives records from `src/data/instructors.ts`, excluding placeholders and remote images. Existing grade values still need confirmation by CAMU before being presented as official credentials.
+
+Documentation correction: BJJ and training photos are local project assets (`src/assets/images/fondobjj*.jpeg` and `combate.jpeg`). Instructor portraits are also local for the four profiles with defined DAN values; only the fifth placeholder profile still references a remote image and is excluded from the black-belt gallery. The hero photo remains external.

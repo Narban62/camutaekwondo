@@ -60,3 +60,40 @@ El build de producción se ejecutó correctamente con `npm.cmd run build` (Vue T
 ## Próximo paso recomendado
 
 Revisar la landing en navegador en desktop y móvil, especialmente el menú y el lightbox (cierre, flechas, foco y swipe), y confirmar los textos alternativos frente a cada foto seleccionada.
+
+## Recent update (2026-10-22)
+
+- Harmonized BJJ typography, content width, spacing and responsive sizing with the rest of the landing.
+- Added a tab in `RECUERDOS` to switch to a three-photo local BJJ album; both albums share the existing lightbox.
+- Added tabs in Instructors to switch between the instructor list and four local profiles with a defined DAN grade. The remote placeholder is excluded.
+- `npm.cmd run build` passed with Vue TypeScript check and Vite 6.4.5. A browser-based visual review is still pending; grades should be confirmed by CAMU before official publication.
+
+## Latest update (2026-10-22)
+
+Corrected the BJJ composition after review: removed the distracting full-section photo layer, fixed the hero copy positioning so it remains anchored inside the image panel, improved overlay contrast and brought feature cards and responsive spacing into line with the shared CAMU tokens. Removed duplicate BJJ overrides from the appended global rules. The final `npm.cmd run build` passed (vue-tsc and Vite 6.4.5).
+
+## BJJ background images
+
+Configured both local BJJ photos as full-bleed backgrounds for their corresponding hero and community panels. The community image now covers the entire panel with a dark text overlay, and both image panels clip their content to the panel bounds. Responsive image positioning is adjusted for narrow screens. The final `npm.cmd run build` passed with vue-tsc and Vite 6.4.5.
+
+## BJJ HeroSection background alignment (2026-10-22)
+
+Corrected the BJJ hero markup (its background element had been incomplete) and changed both BJJ photo panels to CSS `background-image`, `background-size: cover`, dark gradient overlays and the shared grain texture pattern used by `HeroSection.vue`. The community background spans the complete panel behind its content. The final `npm.cmd run build` passed with vue-tsc and Vite 6.4.5.
+
+## Instructor archive tab moved
+
+Moved `CINTURONES NEGROS` out of `TrainingSection.vue` and into `InstructorsSection.vue`. The training section is back to its original combat hero. Instructor tabs now switch between the existing coach profiles and the local black-belt profile gallery; arrow-key navigation remains available. The final `npm.cmd run build` passed with vue-tsc and Vite 6.4.5.
+
+## Galería BJJ y archivo completo de cinturones (2026-10-22)
+
+- Se corrigió la cascada responsive de `GallerySection.vue`: el mosaico CAMU ya no sobrescribe la retícula ni reduce la altura de las filas del álbum BJJ. BJJ muestra 3 columnas en escritorio, 2 hasta 600px y 1 hasta 380px, con todas sus fotografías visibles.
+- El archivo de cinturones negros ahora incluye todas las fotografías locales de `blackBelt`, también los perfiles cuyo grado figura como `Por definir`; se excluye únicamente el perfil remoto. Se normalizaron IDs repetidos de David para evitar claves duplicadas en Vue.
+- El build de producción se debe validar después de estos cambios. La revisión visual interactiva queda pendiente; confirmar con CAMU nombres y grados antes de publicarlos como datos oficiales.
+
+Validación final para los ajustes de galería BJJ y cinturones negros: `npm.cmd run build` terminó correctamente (vue-tsc + Vite 6.4.5). El primer intento dentro del sandbox falló al iniciar esbuild con `spawn EPERM`; el reintento autorizado fuera del sandbox completó el build. El archivo `dist/` se generó correctamente.
+
+## Facebook en el footer (2026-10-22)
+
+Se conectó el enlace Facebook ya configurado en `AppFooter.vue` al bloque de redes del footer. Abre en pestaña nueva con protección `noopener noreferrer`, tiene nombre accesible y usa un icono SVG inline. Instagram permanece indicado como pendiente. Build pendiente de validar para este cambio.
+
+Validación del enlace de Facebook: `npm.cmd run build` terminó correctamente con vue-tsc y Vite 6.4.5.
